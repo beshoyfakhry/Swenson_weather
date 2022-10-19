@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+    <string name="city_name">%s - %s</string>
+</resources>
