@@ -246,7 +246,6 @@
                             app:layout_constraintStart_toStartOf="@id/iv_forecast_after_tomorrow_condition"
                             app:layout_constraintTop_toBottomOf="@id/iv_forecast_after_tomorrow_condition" />
 
-
                         <TextView
                             android:id="@+id/tv_week_day_after_tomorrow"
                             android:layout_width="wrap_content"

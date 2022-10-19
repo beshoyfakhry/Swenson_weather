@@ -65,7 +65,7 @@ class WeatherHomeFragment @Inject constructor(
                     Status.ERROR -> {
                         Snackbar.make(
                             requireActivity().rootLayout,
-                            result.message ?: "An unknown error occured.",
+                            result.message ?: getString(R.string.network_error),
                             Snackbar.LENGTH_LONG
                         ).show()
                         progressBar.visibility = View.GONE
@@ -87,7 +87,7 @@ class WeatherHomeFragment @Inject constructor(
                     Status.ERROR -> {
                         Snackbar.make(
                             requireActivity().rootLayout,
-                            result.message ?: "An unknown error occured.",
+                            result.message ?:getString(R.string.network_error),
                             Snackbar.LENGTH_LONG
                         ).show()
                         progressBar.visibility = View.GONE
@@ -117,8 +117,6 @@ class WeatherHomeFragment @Inject constructor(
                 )
             }
 
-//        cityNamesAdapter.citiesNames = citiesNames
-        //  searchAutoComplete.setAdapter(cityNamesAdapter)
         searchAutoComplete.setAdapter(citiesNamesAdapter)
 
     }

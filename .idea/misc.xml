@@ -6,6 +6,7 @@
         <entry key="../../../Sources/AndroidStudio/SDK/platforms/android-29/data/res/layout/simple_list_item_1.xml" value="0.17794871794871794" />
         <entry key="app/src/main/res/drawable/ic_droplet.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/ic_image.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable/ic_wind.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_weather_home.xml" value="0.2" />
         <entry key="app/src/main/res/layout/item_country.xml" value="0.18072916666666666" />

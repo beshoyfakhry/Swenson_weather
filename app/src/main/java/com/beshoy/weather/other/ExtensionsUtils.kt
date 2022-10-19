@@ -1,9 +1,17 @@
 package com.beshoy.weather.other
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+fun AppCompatActivity.getCurrentTime():String
+{
+    val time = Calendar.getInstance().time
+    val formatter = SimpleDateFormat("HH:mm", Locale.ENGLISH)
+   return formatter.format(time)
+}
 fun Fragment.today(): String {
 
     val calendar = Calendar.getInstance()

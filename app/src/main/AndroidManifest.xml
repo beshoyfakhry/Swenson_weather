@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.beshoy.weather.ui.MainActivity">
+        <activity android:name="com.beshoy.weather.ui.MainActivity"
+            android:screenOrientation="portrait"
+            >
 
 
             <intent-filter>
