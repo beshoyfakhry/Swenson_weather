@@ -1,19 +1,59 @@
 package com.beshoy.weather.repositories
 
+import android.util.Log
+import com.beshoy.weather.data.remote.WeatherApi
 import com.beshoy.weather.data.remote.responses.response.CityNameResponse
 import com.beshoy.weather.data.remote.responses.response.WeatherResponseObject
 import com.beshoy.weather.other.Resource
-import retrofit2.http.Query
+import javax.inject.Inject
 
-interface WeatherRepository {
+class WeatherRepository @Inject constructor(
+    private val weatherApi: WeatherApi
+)     {
 
+        suspend fun getForecast(cityName: String): Resource<WeatherResponseObject> {
+        return try {
+            val response = weatherApi.getForecast(cityName)
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return@let Resource.success(it)
+                } ?: Resource.error("An unknown error occured", null)
+            } else {
+                Resource.error("An unknown error occured", null)
+            }
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "EXCEPTION:", e)
+            Resource.error("Couldn't reach the server. Check your internet connection", null)
+        }
+    }
 
-    suspend fun getForecast(
-        cityName: String
-    ): Resource<WeatherResponseObject>
-
-
-    suspend fun getCitiesNamesList(
-        @Query("q") cityName: String
-    ): Resource<CityNameResponse>
+      suspend fun getCitiesNamesList(cityName: String): Resource<CityNameResponse> {
+        return try {
+            val response = weatherApi.getCitiesNamesList(cityName)
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return@let Resource.success(it)
+                } ?: Resource.error("An unknown error occured", null)
+            } else {
+                Resource.error("An unknown error occured", null)
+            }
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "EXCEPTION:", e)
+            Resource.error("Couldn't reach the server. Check your internet connection", null)
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

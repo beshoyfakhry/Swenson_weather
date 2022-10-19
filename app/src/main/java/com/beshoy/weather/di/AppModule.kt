@@ -4,7 +4,6 @@ import android.content.Context
 import com.beshoy.weather.R
 import com.beshoy.weather.data.remote.WeatherApi
 import com.beshoy.weather.other.Constants.BASE_URL
-import com.beshoy.weather.repositories.DefaultWeatherRepository
 import com.beshoy.weather.repositories.WeatherRepository
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -24,9 +23,10 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideDefaultWeatherRepository(
+    fun provideDefaultShoppingRepository(
         api: WeatherApi
-    ) = DefaultWeatherRepository(api) as WeatherRepository
+    ) = WeatherRepository(api)
+
 
     @Singleton
     @Provides
