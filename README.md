@@ -16,12 +16,14 @@ the application by default is getting London city data, till the user choose ano
 ## Assumtions
 * The footer of the appliction is showing only 3 dates, else we should use a recycle view for that.
 * Application will only suppport portrait view.
+* The city name search will only take action after the typing the third charcter.
  
- ## Next steps
+ ## What enhancments can be done
  * Get the user location to be default search data.
  * Add test cases.
  * Add measurments choose like [Mile or KM - C or F]
  * Add Languages prefrences.
+ * Make the design in compose.
    
 
   ## API Key
