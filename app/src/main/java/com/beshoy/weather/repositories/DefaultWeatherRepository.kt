@@ -30,7 +30,7 @@ class DefaultWeatherRepository @Inject constructor(
 
     override suspend fun getCitiesNamesList(cityName: String): Resource<CityNameResponse> {
         return try {
-            val response = weatherApi.getCitiesNamesList("London")
+            val response = weatherApi.getCitiesNamesList(cityName)
             if (response.isSuccessful) {
                 response.body()?.let {
                     return@let Resource.success(it)
