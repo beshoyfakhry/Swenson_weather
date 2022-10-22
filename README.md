@@ -4,13 +4,13 @@ the application by default is getting London city data, till the user choose ano
 
 
 ## Technologies Used in the porject:
-* Using MVVM  
+* MVVM  
 * Retrofit
 * Coroutines
-* Dependancy Intejection (Dagger)
+* Dependancy Intejection (Dagger Hilt)
 * Clean architecture
 * Navigation controller
-* view binding 
+* View binding 
 
 
 ## Assumtions
